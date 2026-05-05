@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expert Coaches | Kinetic</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo interactive-logo" onclick="window.location.href='index.html'">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="var(--primary)" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="logo-icon">
+                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+            </svg>
+            KINETIC
+        </div>
+        <nav class="nav-links">
+            <a href="/index.html">Home</a>
+            <a href="/services.html">Services</a>
+            <a href="/coaches.html" class="text-accent">Coaches</a>
+            <a href="/schedule.html">Schedule</a>
+            <a href="/locations.html">Locations</a>
+            <a href="/community.html">Community</a>
+            <a href="/contact.html">Contact</a>
+        </nav>
+        <button class="btn btn-primary nav-cta" onclick="window.location.href='join.html'">Join Now</button>
+    </header>
+
+    <main>
+        <section class="hero-section reveal" style="min-height: 40vh;">
+            <div class="hero-content text-center w-100">
+                <h1 class="hero-title">MEET THE <span class="text-accent">EXPERTS</span></h1>
+                <p class="hero-subtitle mx-auto">Our coaches are industry leaders dedicated to unlocking your peak performance.</p>
+            </div>
+        </section>
+
+        <section class="coaches-section bg-surface-alt reveal">
+            <div class="container">
+                <div class="grid-3">
+                    <!-- Coach 1 -->
+                    <div class="coach-card card img-container" style="padding:0; overflow:hidden;">
+                        <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&fit=crop&w=800&q=80" alt="Marcus Vance" class="coach-img interactive-img" style="width: 100%; object-fit: cover; border-bottom-left-radius: 0; border-bottom-right-radius: 0; margin-bottom: 0;">
+                        <div class="coach-info" style="padding: var(--space-md);">
+                            <h3>Marcus Vance</h3>
+                            <span class="chip chip-primary">Head of Strength</span>
+                            <p>Former Olympic lifter with 15 years coaching elite athletes. Specializes in barbell mechanics.</p>
+                            <button class="btn btn-outline mt-4 w-100">Book Session</button>
+                        </div>
+                    </div>
+                    <!-- Coach 2 -->
+                    <div class="coach-card card img-container" style="padding:0; overflow:hidden;">
+                        <img src="https://images.unsplash.com/photo-1594381898411-846e7d193883?auto=format&fit=crop&w=800&q=80" alt="Sarah Jenkins" class="coach-img interactive-img" style="width: 100%; object-fit: cover; border-bottom-left-radius: 0; border-bottom-right-radius: 0; margin-bottom: 0;">
+                        <div class="coach-info" style="padding: var(--space-md);">
+                            <h3>Sarah Jenkins</h3>
+                            <span class="chip chip-secondary">Endurance Director</span>
+                            <p>Triathlete and HIIT expert. Her classes are designed to push your cardiovascular limits.</p>
+                            <button class="btn btn-outline mt-4 w-100">Book Session</button>
+                        </div>
+                    </div>
+                    <!-- Coach 3 -->
+                    <div class="coach-card card img-container" style="padding:0; overflow:hidden;">
+                        <img src="https://images.unsplash.com/photo-1567598508481-65985588e295?auto=format&fit=crop&w=800&q=80" alt="David Chen" class="coach-img interactive-img" style="width: 100%; object-fit: cover; border-bottom-left-radius: 0; border-bottom-right-radius: 0; margin-bottom: 0;">
+                        <div class="coach-info" style="padding: var(--space-md);">
+                            <h3>David Chen</h3>
+                            <span class="chip chip-primary">Mobility Specialist</span>
+                            <p>Focuses on injury prevention, active recovery, and functional range conditioning.</p>
+                            <button class="btn btn-outline mt-4 w-100">Book Session</button>
+                        </div>
+                    </div>
+                    <!-- Coach 4 -->
+                    <div class="coach-card card img-container" style="padding:0; overflow:hidden;">
+                        <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=800&q=80" alt="Emily Ross" class="coach-img interactive-img" style="width: 100%; object-fit: cover; border-bottom-left-radius: 0; border-bottom-right-radius: 0; margin-bottom: 0;">
+                        <div class="coach-info" style="padding: var(--space-md);">
+                            <h3>Emily Ross</h3>
+                            <span class="chip chip-primary">Yoga Instructor</span>
+                            <p>Brings 10 years of Vinyasa experience, helping athletes build core stability and mindfulness.</p>
+                            <button class="btn btn-outline mt-4 w-100">Book Session</button>
+                        </div>
+                    </div>
+                    <!-- Coach 5 -->
+                    <div class="coach-card card img-container" style="padding:0; overflow:hidden;">
+                        <img src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=800&q=80" alt="Michael Torres" class="coach-img interactive-img" style="width: 100%; object-fit: cover; border-bottom-left-radius: 0; border-bottom-right-radius: 0; margin-bottom: 0;">
+                        <div class="coach-info" style="padding: var(--space-md);">
+                            <h3>Michael Torres</h3>
+                            <span class="chip chip-secondary">HIIT Coach</span>
+                            <p>Known for his intense, high-energy circuits. Guaranteed to make you sweat.</p>
+                            <button class="btn btn-outline mt-4 w-100">Book Session</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer bg-tertiary text-white">
+        <div class="container text-center">
+            <p>&copy; 2026 Kinetic Fitness. All rights reserved.</p>
+        </div>
+    </footer>
+    <script type="module" src="/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community | Kinetic</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo interactive-logo" onclick="window.location.href='index.html'">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="var(--primary)" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="logo-icon">
+                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+            </svg>
+            KINETIC
+        </div>
+        <nav class="nav-links">
+            <a href="/index.html">Home</a>
+            <a href="/services.html">Services</a>
+            <a href="/coaches.html">Coaches</a>
+            <a href="/schedule.html">Schedule</a>
+            <a href="/locations.html">Locations</a>
+            <a href="/community.html" class="text-accent">Community</a>
+            <a href="/contact.html">Contact</a>
+        </nav>
+        <button class="btn btn-primary nav-cta" onclick="window.location.href='join.html'">Join Now</button>
+    </header>
+
+    <main>
+        <section class="hero-section reveal" style="min-height: 40vh;">
+            <div class="hero-content text-center w-100">
+                <h1 class="hero-title">OUR <span class="text-accent">COMMUNITY</span></h1>
+                <p class="hero-subtitle mx-auto">Connect with like-minded individuals.</p>
+            </div>
+        </section>
+
+        <section class="community-section reveal">
+            <div class="container">
+                <h2 class="text-center">Member Stories</h2>
+                <div class="grid-3 mt-4">
+                    <div class="testimonial-card card">
+                        <div class="stars text-accent"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                        <p>"Kinetic completely changed my approach to fitness. The coaches are phenomenal."</p>
+                        <strong>- Alex R.</strong>
+                    </div>
+                    <div class="testimonial-card card">
+                        <div class="stars text-accent"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                        <p>"I lost 20lbs and built incredible strength in just 6 months. Best gym ever."</p>
+                        <strong>- Maria S.</strong>
+                    </div>
+                    <div class="testimonial-card card">
+                        <div class="stars text-accent"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half"></i></div>
+                        <p>"The community here is unmatched. Everyone pushes each other to be better."</p>
+                        <strong>- James T.</strong>
+                    </div>
+                </div>
+
+                <!-- Interactive Gallery -->
+                <div class="events-section mt-4 pt-4" style="border-top: 1px solid var(--outline);">
+                    <h2 class="text-center">Life at Kinetic</h2>
+                    <div class="grid-3 mt-4">
+                        <div class="img-container" style="height: 250px;">
+                            <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?q=80&w=1470&auto=format&fit=crop" alt="Community working out" class="interactive-img" style="height: 100%;">
+                        </div>
+                        <div class="img-container" style="height: 250px;">
+                            <img src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?q=80&w=1470&auto=format&fit=crop" alt="Gym weights" class="interactive-img" style="height: 100%;">
+                        </div>
+                        <div class="img-container" style="height: 250px;">
+                            <img src="https://images.unsplash.com/photo-1574680096145-d05b474e2155?q=80&w=1469&auto=format&fit=crop" alt="Gym training" class="interactive-img" style="height: 100%;">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="events-section mt-4 pt-4" style="border-top: 1px solid var(--outline);">
+                    <h2 class="text-center">Upcoming Events</h2>
+                    <ul class="location-list mt-4">
+                        <li class="card">
+                            <i class="fa-solid fa-calendar" style="font-size: 2rem;"></i>
+                            <div>
+                                <h3>Summer Throwdown Competition</h3>
+                                <p>August 15th | Downtown Hub</p>
+                            </div>
+                        </li>
+                        <li class="card">
+                            <i class="fa-solid fa-calendar" style="font-size: 2rem;"></i>
+                            <div>
+                                <h3>Nutrition & Recovery Seminar</h3>
+                                <p>September 10th | Westside Studio</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer bg-tertiary text-white">
+        <div class="container text-center">
+            <p>&copy; 2026 Kinetic Fitness. All rights reserved.</p>
+        </div>
+    </footer>
+    <script type="module" src="/main.js"></script>
+</body>
+</html>

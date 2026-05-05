@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Locations | Kinetic</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo interactive-logo" onclick="window.location.href='index.html'">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="var(--primary)" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="logo-icon">
+                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+            </svg>
+            KINETIC
+        </div>
+        <nav class="nav-links">
+            <a href="/index.html">Home</a>
+            <a href="/services.html">Services</a>
+            <a href="/coaches.html">Coaches</a>
+            <a href="/schedule.html">Schedule</a>
+            <a href="/locations.html" class="text-accent">Locations</a>
+            <a href="/community.html">Community</a>
+            <a href="/contact.html">Contact</a>
+        </nav>
+        <button class="btn btn-primary nav-cta" onclick="window.location.href='join.html'">Join Now</button>
+    </header>
+
+    <main>
+        <section class="hero-section reveal" style="min-height: 40vh;">
+            <div class="hero-content text-center w-100">
+                <h1 class="hero-title">OUR <span class="text-accent">LOCATIONS</span></h1>
+                <p class="hero-subtitle mx-auto">Find a Kinetic studio near you.</p>
+            </div>
+        </section>
+
+        <section class="locations-section bg-surface-alt reveal">
+            <div class="container row">
+                <div class="location-info w-100">
+                    <ul class="location-list">
+                        <!-- Location 1 -->
+                        <li class="card" style="display: block;">
+                            <div class="grid-2">
+                                <div>
+                                    <i class="fa-solid fa-location-dot" style="font-size: 2rem; margin-bottom: 1rem; display: block;"></i>
+                                    <h3>Downtown Hub</h3>
+                                    <p>123 Fitness Blvd, City Center, NY 10001</p>
+                                    <p><strong>Amenities:</strong> Sauna, Olympic Lifting Platforms, Smoothie Bar</p>
+                                </div>
+                                <div class="img-container">
+                                    <iframe width="100%" height="200" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.openstreetmap.org/export/embed.html?bbox=-74.01%2C40.71%2C-73.99%2C40.73&amp;layer=mapnik&amp;marker=40.72,-74.00" style="border-radius: var(--radius-md);"></iframe>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- Location 2 -->
+                        <li class="card" style="display: block;">
+                            <div class="grid-2">
+                                <div>
+                                    <i class="fa-solid fa-location-dot" style="font-size: 2rem; margin-bottom: 1rem; display: block;"></i>
+                                    <h3>Westside Studio</h3>
+                                    <p>456 Wellness Way, West District, NY 10002</p>
+                                    <p><strong>Amenities:</strong> Outdoor Turf, Mobility Studio, Cold Plunge</p>
+                                </div>
+                                <div class="img-container">
+                                    <iframe width="100%" height="200" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.openstreetmap.org/export/embed.html?bbox=-74.05%2C40.75%2C-74.03%2C40.77&amp;layer=mapnik&amp;marker=40.76,-74.04" style="border-radius: var(--radius-md);"></iframe>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- Location 3 -->
+                        <li class="card" style="display: block;">
+                            <div class="grid-2">
+                                <div>
+                                    <i class="fa-solid fa-location-dot" style="font-size: 2rem; margin-bottom: 1rem; display: block;"></i>
+                                    <h3>North Park</h3>
+                                    <p>789 Active Ave, North Park, NY 10003</p>
+                                    <p><strong>Amenities:</strong> Olympic Pool, Cafe, 24/7 Access</p>
+                                </div>
+                                <div class="img-container">
+                                    <iframe width="100%" height="200" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.openstreetmap.org/export/embed.html?bbox=-73.98%2C40.78%2C-73.96%2C40.80&amp;layer=mapnik&amp;marker=40.79,-73.97" style="border-radius: var(--radius-md);"></iframe>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="reveal">
+            <div class="container text-center">
+                <h2 class="mb-4">State of the Art Facilities</h2>
+                <div class="img-container mt-4" style="height: 400px;">
+                    <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=1470&auto=format&fit=crop" alt="Gym Facilities" class="interactive-img" style="height: 100%;">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer bg-tertiary text-white mt-4">
+        <div class="container text-center">
+            <p>&copy; 2026 Kinetic Fitness. All rights reserved.</p>
+        </div>
+    </footer>
+    <script type="module" src="/main.js"></script>
+</body>
+</html>

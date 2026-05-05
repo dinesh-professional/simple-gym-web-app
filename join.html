@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join Now | Kinetic</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .plan-card {
+            border: 2px solid var(--outline);
+            padding: var(--space-lg) var(--space-md);
+            border-radius: var(--radius-md);
+            text-align: center;
+            transition: var(--transition);
+            background-color: var(--surface);
+        }
+        .plan-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+        .plan-card.featured {
+            border-color: var(--primary);
+            position: relative;
+            box-shadow: var(--shadow-sm);
+        }
+        .plan-card.featured .badge {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--primary);
+            color: white;
+            padding: 4px 16px;
+            border-radius: var(--radius-full);
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+        .plan-price {
+            font-size: 3rem;
+            font-family: var(--font-heading);
+            font-weight: 800;
+            color: var(--tertiary);
+            margin: var(--space-sm) 0;
+        }
+        .plan-price span {
+            font-size: 1rem;
+            color: var(--on-surface-variant);
+            font-weight: 500;
+        }
+        .plan-features {
+            text-align: left;
+            margin: var(--space-md) 0;
+        }
+        .plan-features li {
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .plan-features i {
+            color: var(--primary);
+        }
+        .registration-form {
+            background-color: var(--surface-alt);
+            padding: var(--space-lg);
+            border-radius: var(--radius-md);
+        }
+    </style>
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo interactive-logo" onclick="window.location.href='index.html'">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="var(--primary)" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="logo-icon">
+                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+            </svg>
+            KINETIC
+        </div>
+        <nav class="nav-links">
+            <a href="/index.html">Home</a>
+            <a href="/services.html">Services</a>
+            <a href="/coaches.html">Coaches</a>
+            <a href="/schedule.html">Schedule</a>
+            <a href="/locations.html">Locations</a>
+            <a href="/community.html">Community</a>
+            <a href="/contact.html">Contact</a>
+        </nav>
+        <button class="btn btn-primary nav-cta" onclick="window.location.href='join.html'">Join Now</button>
+    </header>
+
+    <main>
+        <section class="hero-section reveal" style="min-height: 40vh;">
+            <div class="hero-content text-center w-100">
+                <h1 class="hero-title">JOIN <span class="text-accent">KINETIC</span></h1>
+                <p class="hero-subtitle mx-auto">Choose your plan and start your journey today.</p>
+            </div>
+        </section>
+
+        <!-- Plans Section -->
+        <section class="reveal bg-surface-alt">
+            <div class="container">
+                <h2 class="text-center mb-4">Membership Plans</h2>
+                <div class="grid-3 mt-4">
+                    <!-- Basic Plan -->
+                    <div class="plan-card">
+                        <h3>Basic</h3>
+                        <div class="plan-price">$49<span>/mo</span></div>
+                        <p>Perfect for getting started.</p>
+                        <ul class="plan-features">
+                            <li><i class="fa-solid fa-check"></i> 24/7 Gym Access</li>
+                            <li><i class="fa-solid fa-check"></i> Basic Equipment Use</li>
+                            <li><i class="fa-solid fa-check"></i> Locker Room Access</li>
+                            <li style="opacity: 0.5;"><i class="fa-solid fa-xmark"></i> Group Classes</li>
+                            <li style="opacity: 0.5;"><i class="fa-solid fa-xmark"></i> Personal Training</li>
+                        </ul>
+                        <button class="btn btn-outline w-100" onclick="document.getElementById('plan-select').value='basic'; document.getElementById('registration').scrollIntoView({behavior:'smooth'});">Select Basic</button>
+                    </div>
+
+                    <!-- Pro Plan -->
+                    <div class="plan-card featured">
+                        <div class="badge">Most Popular</div>
+                        <h3>Pro</h3>
+                        <div class="plan-price">$99<span>/mo</span></div>
+                        <p>For the dedicated athlete.</p>
+                        <ul class="plan-features">
+                            <li><i class="fa-solid fa-check"></i> 24/7 Gym Access</li>
+                            <li><i class="fa-solid fa-check"></i> Premium Equipment</li>
+                            <li><i class="fa-solid fa-check"></i> Unlimited Group Classes</li>
+                            <li><i class="fa-solid fa-check"></i> 1 PT Session / month</li>
+                            <li style="opacity: 0.5;"><i class="fa-solid fa-xmark"></i> Recovery Zone Access</li>
+                        </ul>
+                        <button class="btn btn-primary w-100" onclick="document.getElementById('plan-select').value='pro'; document.getElementById('registration').scrollIntoView({behavior:'smooth'});">Select Pro</button>
+                    </div>
+
+                    <!-- Elite Plan -->
+                    <div class="plan-card">
+                        <h3>Elite</h3>
+                        <div class="plan-price">$149<span>/mo</span></div>
+                        <p>The ultimate fitness experience.</p>
+                        <ul class="plan-features">
+                            <li><i class="fa-solid fa-check"></i> All Pro Features</li>
+                            <li><i class="fa-solid fa-check"></i> Unlimited PT Sessions</li>
+                            <li><i class="fa-solid fa-check"></i> Recovery Zone Access</li>
+                            <li><i class="fa-solid fa-check"></i> Nutrition Coaching</li>
+                            <li><i class="fa-solid fa-check"></i> VIP Guest Passes</li>
+                        </ul>
+                        <button class="btn btn-outline w-100" onclick="document.getElementById('plan-select').value='elite'; document.getElementById('registration').scrollIntoView({behavior:'smooth'});">Select Elite</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Registration Form -->
+        <section id="registration" class="reveal">
+            <div class="container row">
+                <div class="w-100 registration-form">
+                    <h2>Complete Registration</h2>
+                    <form onsubmit="event.preventDefault(); alert('Registration successful! Welcome to Kinetic.'); window.location.href='index.html';">
+                        <div class="grid-2">
+                            <div class="input-group">
+                                <label for="firstName">First Name</label>
+                                <input type="text" id="firstName" required>
+                            </div>
+                            <div class="input-group">
+                                <label for="lastName">Last Name</label>
+                                <input type="text" id="lastName" required>
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="text" id="phone" required>
+                        </div>
+                        <div class="grid-2">
+                            <div class="input-group">
+                                <label for="plan-select">Selected Plan</label>
+                                <select id="plan-select" style="width: 100%; padding: 12px 16px; border: 1px solid var(--outline); border-radius: var(--radius-sm); font-family: var(--font-body); font-size: 1rem;">
+                                    <option value="basic">Basic ($49/mo)</option>
+                                    <option value="pro" selected>Pro ($99/mo)</option>
+                                    <option value="elite">Elite ($149/mo)</option>
+                                </select>
+                            </div>
+                            <div class="input-group">
+                                <label for="startDate">Start Date</label>
+                                <input type="date" id="startDate" required style="width: 100%; padding: 12px 16px; border: 1px solid var(--outline); border-radius: var(--radius-sm); font-family: var(--font-body); font-size: 1rem;">
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-secondary btn-large w-100 mt-4">Confirm Registration</button>
+                    </form>
+                </div>
+
+                <div class="w-100 img-container" style="height: auto; min-height: 400px;">
+                    <img src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?q=80&w=1470&auto=format&fit=crop" alt="Fit athlete" class="interactive-img" style="height: 100%; width: 100%; object-fit: cover;">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer bg-tertiary text-white mt-4">
+        <div class="container text-center">
+            <p>&copy; 2026 Kinetic Fitness. All rights reserved.</p>
+        </div>
+    </footer>
+    <script type="module" src="/main.js"></script>
+</body>
+</html>

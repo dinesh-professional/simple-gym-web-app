@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule | Kinetic</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo interactive-logo" onclick="window.location.href='index.html'">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="var(--primary)" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="logo-icon">
+                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+            </svg>
+            KINETIC
+        </div>
+        <nav class="nav-links">
+            <a href="/index.html">Home</a>
+            <a href="/services.html">Services</a>
+            <a href="/coaches.html">Coaches</a>
+            <a href="/schedule.html" class="text-accent">Schedule</a>
+            <a href="/locations.html">Locations</a>
+            <a href="/community.html">Community</a>
+            <a href="/contact.html">Contact</a>
+        </nav>
+        <button class="btn btn-primary nav-cta" onclick="window.location.href='join.html'">Join Now</button>
+    </header>
+
+    <main>
+        <section class="hero-section reveal" style="min-height: 40vh;">
+            <div class="hero-content text-center w-100">
+                <h1 class="hero-title">FULL <span class="text-accent">SCHEDULE</span></h1>
+                <p class="hero-subtitle mx-auto">Plan your week and commit to your fitness journey.</p>
+            </div>
+        </section>
+
+        <section class="schedule-section reveal">
+            <div class="container">
+                <div class="schedule-filters">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="hiit">HIIT</button>
+                    <button class="filter-btn" data-filter="yoga">Yoga & Mobility</button>
+                    <button class="filter-btn" data-filter="strength">Strength</button>
+                </div>
+                
+                <h3 class="mt-4 text-center">Monday</h3>
+                <div class="schedule-grid" id="schedule-grid">
+                    <!-- Reusing JS logic to populate this -->
+                </div>
+            </div>
+        </section>
+
+        <section class="reveal bg-surface-alt">
+            <div class="container text-center">
+                <h2 class="mb-4">Experience Our Classes</h2>
+                <div class="grid-2 mt-4">
+                    <div class="img-container" style="height: 300px;">
+                        <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?q=80&w=1470&auto=format&fit=crop" alt="Yoga Class" class="interactive-img" style="height: 100%;">
+                    </div>
+                    <div class="img-container" style="height: 300px;">
+                        <img src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?q=80&w=1470&auto=format&fit=crop" alt="Strength Class" class="interactive-img" style="height: 100%;">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cal.com inline widget begin -->
+        <section class="reveal bg-surface">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2>BOOK A CONSULTATION</h2>
+                    <p>Discuss your goals with our experts.</p>
+                </div>
+                <iframe src="https://cal.com/dinesh-sankar-ajnnqk/30min" frameborder="0" width="100%" height="700" style="min-width:320px;height:700px; border:none; border-radius: var(--radius-md);"></iframe>
+            </div>
+        </section>
+        <!-- Cal.com inline widget end -->
+    </main>
+
+    <footer class="footer bg-tertiary text-white mt-4">
+        <div class="container text-center">
+            <p>&copy; 2026 Kinetic Fitness. All rights reserved.</p>
+        </div>
+    </footer>
+    <script type="module" src="/main.js"></script>
+</body>
+</html>

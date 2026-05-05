@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services | Kinetic</title>
+    <meta name="description" content="Discover our fitness services, including Personal Training, HIIT, and Yoga.">
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .accordion {
+            background-color: var(--surface);
+            color: var(--on-surface);
+            cursor: pointer;
+            padding: 24px;
+            width: 100%;
+            border: 1px solid var(--outline);
+            text-align: left;
+            outline: none;
+            font-size: 1.25rem;
+            transition: var(--transition);
+            font-family: var(--font-heading);
+            font-weight: 600;
+            border-radius: var(--radius-sm);
+            margin-bottom: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .accordion.active, .accordion:hover {
+            background-color: var(--surface-alt);
+            border-color: var(--primary);
+        }
+        .accordion:after {
+            content: '\002B';
+            color: var(--primary);
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+        .accordion.active:after {
+            content: "\2212";
+        }
+        .panel {
+            padding: 0 24px;
+            background-color: white;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s ease;
+            border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+            margin-bottom: 16px;
+        }
+        .panel.show {
+            max-height: 500px;
+            padding: 16px 24px 24px;
+            border: 1px solid var(--outline);
+            border-top: none;
+            margin-top: -8px;
+        }
+        .services-header { margin-bottom: var(--space-xl); text-align: center; }
+    </style>
+</head>
+<body>
+    <header class="navbar reveal">
+        <div class="logo interactive-logo" onclick="window.location.href='/index.html'">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="var(--primary)" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="logo-icon">
+                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+            </svg>
+            KINETIC
+        </div>
+        <nav class="nav-links">
+            <a href="/index.html">Home</a>
+            <a href="/services.html" class="text-accent">Services</a>
+            <a href="/coaches.html">Coaches</a>
+            <a href="/schedule.html">Schedule</a>
+            <a href="/locations.html">Locations</a>
+            <a href="/community.html">Community</a>
+            <a href="/contact.html">Contact</a>
+        </nav>
+        <button class="btn btn-primary nav-cta" onclick="window.location.href='/join.html'">Join Now</button>
+    </header>
+
+    <main>
+        <section class="reveal">
+            <div class="container" style="max-width: 800px;">
+                <div class="services-header">
+                    <h2>OUR <span class="text-accent">SERVICES</span></h2>
+                    <p>Elevate your performance with tailored fitness programs designed for every level.</p>
+                </div>
+                
+                <button class="accordion">Personal Training</button>
+                <div class="panel">
+                    <p>Work one-on-one with our expert coaches to build a program specific to your goals, body type, and schedule. Includes nutritional guidance and weekly check-ins.</p>
+                    <button class="btn btn-outline mt-4" onclick="window.location.href='/contact.html'">Inquire Now</button>
+                </div>
+
+                <button class="accordion">Group HIIT Classes</button>
+                <div class="panel">
+                    <p>High-Intensity Interval Training designed to burn maximum calories in minimum time. Join a supportive group environment that pushes you to your limits.</p>
+                    <button class="btn btn-outline mt-4" onclick="window.location.href='/schedule.html'">View Schedule</button>
+                </div>
+
+                <button class="accordion">Strength & Conditioning</button>
+                <div class="panel">
+                    <p>Focus on building raw power, agility, and muscular endurance. Perfect for athletes or anyone looking to fundamentally change their body composition.</p>
+                    <button class="btn btn-outline mt-4" onclick="window.location.href='/schedule.html'">View Schedule</button>
+                </div>
+
+                <button class="accordion">Yoga & Mobility</button>
+                <div class="panel">
+                    <p>Enhance your flexibility, prevent injuries, and improve recovery times with our specialized mobility and sports yoga classes.</p>
+                    <button class="btn btn-outline mt-4" onclick="window.location.href='/schedule.html'">View Schedule</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer bg-tertiary text-white">
+        <div class="container text-center">
+            <p>&copy; 2026 Kinetic Fitness. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script type="module" src="/main.js"></script>
+    <script>
+        var acc = document.getElementsByClassName("accordion");
+        for (var i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.classList.contains('show')) {
+                    panel.classList.remove('show');
+                } else {
+                    panel.classList.add('show');
+                }
+            });
+        }
+    </script>
+</body>
+</html>

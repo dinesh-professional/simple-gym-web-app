@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Kinetic</title>
+    <meta name="description" content="Get in touch with Kinetic Fitness. Lead capture and inquiries.">
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .contact-container { max-width: 600px; margin: 0 auto; }
+        .form-message { padding: 12px; border-radius: var(--radius-sm); margin-bottom: 16px; display: none; }
+        .form-message.success { background-color: rgba(0, 255, 0, 0.1); color: #00aa00; border: 1px solid #00aa00; display: block; }
+        .form-message.error { background-color: rgba(255, 0, 0, 0.1); color: #ba1a1a; border: 1px solid #ba1a1a; display: block; }
+        select { width: 100%; padding: 12px 16px; border: 1px solid var(--outline); border-radius: var(--radius-sm); font-family: var(--font-body); font-size: 1rem; margin-bottom: var(--space-md); }
+    </style>
+</head>
+<body>
+    <header class="navbar reveal">
+        <div class="logo interactive-logo" onclick="window.location.href='/index.html'">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="var(--primary)" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="logo-icon">
+                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+            </svg>
+            KINETIC
+        </div>
+        <nav class="nav-links">
+            <a href="/index.html">Home</a>
+            <a href="/services.html">Services</a>
+            <a href="/coaches.html">Coaches</a>
+            <a href="/schedule.html">Schedule</a>
+            <a href="/locations.html">Locations</a>
+            <a href="/community.html">Community</a>
+            <a href="/contact.html" class="text-accent">Contact</a>
+        </nav>
+        <button class="btn btn-primary nav-cta" onclick="window.location.href='/join.html'">Join Now</button>
+    </header>
+
+    <main>
+        <section class="reveal">
+            <div class="container contact-container card">
+                <h2 class="text-center">TALK TO A HUMAN</h2>
+                <p class="text-center">Leave your details and our team will get back to you shortly, or reach out to us directly!</p>
+                
+                <div class="gym-contact-details text-center" style="margin: 2rem 0; padding: 1.5rem; background-color: var(--background); border-radius: var(--radius-sm); border: 1px solid var(--outline);">
+                    <h3 style="margin-bottom: 1rem;">Kinetic Fitness</h3>
+                    <p style="margin-bottom: 0.5rem;"><i class="fa-solid fa-phone" style="color: var(--primary); margin-right: 8px;"></i> (555) 123-4567</p>
+                    <p style="margin-bottom: 0.5rem;"><i class="fa-solid fa-envelope" style="color: var(--primary); margin-right: 8px;"></i> hello@kineticfitness.com</p>
+                    <p style="margin-bottom: 0;"><i class="fa-solid fa-location-dot" style="color: var(--primary); margin-right: 8px;"></i> 123 Power Lane, Muscle City, MC 90210</p>
+                </div>
+
+                <div id="form-msg" class="form-message"></div>
+                <form id="lead-form">
+                    <div class="input-group">
+                        <label for="lead-name">Full Name</label>
+                        <input type="text" id="lead-name" required placeholder="John Doe">
+                    </div>
+                    <div class="input-group">
+                        <label for="lead-email">Email Address</label>
+                        <input type="email" id="lead-email" required placeholder="john@example.com">
+                    </div>
+                    <div class="input-group">
+                        <label for="lead-project">Fitness Goal (Project Type)</label>
+                        <select id="lead-project" required>
+                            <option value="">Select an option...</option>
+                            <option value="Weight Loss">Weight Loss</option>
+                            <option value="Muscle Gain">Muscle Gain</option>
+                            <option value="Endurance">Endurance / Cardio</option>
+                            <option value="General Health">General Health</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100 btn-large" id="lead-submit">Submit Inquiry</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer bg-tertiary text-white">
+        <div class="container text-center">
+            <p>&copy; 2026 Kinetic Fitness. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script type="module" src="/main.js"></script>
+    <script type="module">
+        document.getElementById('lead-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const btn = document.getElementById('lead-submit');
+            const msgBox = document.getElementById('form-msg');
+            btn.textContent = 'Submitting...';
+            btn.disabled = true;
+            
+            const name = document.getElementById('lead-name').value;
+            const email = document.getElementById('lead-email').value;
+            const project = document.getElementById('lead-project').value;
+
+            try {
+                // Use environment variables injected by Vite
+                const url = import.meta.env.VITE_SUPABASE_URL;
+                const key = import.meta.env.VITE_SUPABASE_ANON_KEY;
+                
+                if(!url || !key || url === 'YOUR_SUPABASE_URL_HERE') {
+                    // Mock success if env vars are not properly set yet
+                    setTimeout(() => {
+                        msgBox.className = 'form-message success';
+                        msgBox.textContent = 'Inquiry submitted successfully! (Mocked - configure Supabase env vars)';
+                        btn.textContent = 'Submit Inquiry';
+                        btn.disabled = false;
+                        document.getElementById('lead-form').reset();
+                    }, 1000);
+                    return;
+                }
+
+                // Send to Supabase 'leads' table
+                const response = await fetch(`${url}/rest/v1/leads`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'apikey': key,
+                        'Authorization': `Bearer ${key}`,
+                        'Prefer': 'return=minimal'
+                    },
+                    body: JSON.stringify({ name, email, fitness_goal: project })
+                });
+
+                if (response.ok) {
+                    msgBox.className = 'form-message success';
+                    msgBox.textContent = 'Inquiry submitted successfully! We will be in touch.';
+                    document.getElementById('lead-form').reset();
+                } else {
+                    throw new Error('Network response was not ok.');
+                }
+            } catch(err) {
+                msgBox.className = 'form-message error';
+                msgBox.textContent = 'Failed to submit inquiry. Please try again later.';
+            } finally {
+                btn.textContent = 'Submit Inquiry';
+                btn.disabled = false;
+            }
+        });
+    </script>
+</body>
+</html>
