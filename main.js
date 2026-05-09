@@ -218,8 +218,10 @@ async function sendToOpenRouter(userMessage) {
         // Use environment variable for the API key
         const apiKey = import.meta.env.VITE_OPENROUTER_API_KEY;
         
-        if (!apiKey) {
-            throw new Error("API Key missing");
+        if (!apiKey || apiKey === 'YOUR_OPENROUTER_API_KEY_HERE') {
+            loadingDiv.remove();
+            addMessage("The chatbot is currently in 'Demo Mode'. To enable full AI features, please set your VITE_OPENROUTER_API_KEY in the .env file.", 'bot');
+            return;
         }
 
         const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
@@ -235,6 +237,11 @@ async function sendToOpenRouter(userMessage) {
         });
 
         const data = await response.json();
+        
+        if (data.error) {
+            throw new Error(data.error.message || "API Error");
+        }
+
         const botReply = data.choices[0].message.content;
         
         loadingDiv.remove();
@@ -244,7 +251,7 @@ async function sendToOpenRouter(userMessage) {
     } catch (error) {
         loadingDiv.remove();
         console.error("Chatbot Error:", error);
-        addMessage("Sorry, I am having trouble connecting right now. Please reach out via our contact page!", 'bot');
+        addMessage("I'm having trouble connecting to the AI. Please ensure your API key is valid or check your internet connection.", 'bot');
     }
 }
 
